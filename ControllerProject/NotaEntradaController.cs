@@ -14,12 +14,17 @@ namespace ControllerProject
 
         public NotaEntrada Insert(NotaEntrada notaEntrada)
         {
-            return this.repository.
-                InsertNotaEntrada(notaEntrada);
+            return this.repository.InsertNotaEntrada(notaEntrada);
+
         }
+        public NotaEntrada GetNotaEntradaById(Guid Id) {
+
+        return this.repository.GetNotaEntradaById(Id);
+}
 
         public void Remove(NotaEntrada notaEntrada)
         {
+            notaEntrada.RemoverTodosProdutos();
             this.repository.RemoveNotaEntrada(notaEntrada);
         }
 
@@ -33,5 +38,6 @@ namespace ControllerProject
             return this.repository.
                 UpdateNotaEntrada(notaEntrada);
         }
+
     }
 }
